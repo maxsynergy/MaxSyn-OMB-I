@@ -124,6 +124,7 @@
       --slate:     #2d3748;
       --muted:     #6b7280;
       --border:    #e2ddd5;
+      --sand:      #ede8df;
       --white:     #ffffff;
       --serif:     'Playfair Display', Georgia, serif;
       --sans:      'DM Sans', system-ui, sans-serif;
@@ -152,7 +153,7 @@
       justify-content: space-between;
       padding: 0 5vw;
       height: 64px;
-      background: rgba(246,243,238,0.92);
+      background: rgba(237,232,223,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -714,12 +715,15 @@
       .diff-grid { grid-template-columns: 1fr; }
       .cta-section { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 16px; text-align: center; }
+      .pillars { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 560px) {
       .section { padding: 64px 5vw; }
       .steps { grid-template-columns: 1fr; }
       .hero-stats { grid-template-columns: 1fr 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+      .btn-dark { font-size: 0.8rem; padding: 14px 24px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -728,8 +732,6 @@
       }
     }
 
-    /* ===== ANIMAÇÕES DE ENTRADA ===== */
-    @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
@@ -741,12 +743,18 @@
     .hero-stats   { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
   
     /* ===== PILARES OMB+I ===== */
-    .pillars {
+    /* .pillars {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2px;
       margin-top: 48px;
       margin-bottom: 56px;
+    } */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
     }
 
     .pillar {
@@ -754,6 +762,13 @@
       padding: 36px 28px;
       border-top: 2px solid var(--gold);
       position: relative;
+    }
+
+    /* Variante para fundo claro (seção Pilares) */
+    .pillar-light {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
     }
 
     .pillar-badge {
@@ -782,6 +797,38 @@
       line-height: 1.65;
     }
 
+    /* Overrides da variante light — devem vir APÓS as regras base */
+    .pillar-light h3 {
+      color: var(--ink);
+    }
+
+    .pillar-light p {
+      color: var(--muted);
+    }
+
+    /* Menção aos pilares no Hero */
+    .hero-pillars-mention {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 20px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+      margin-bottom: 40px;
+    }
+
+    .hero-pillars-mention span {
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* Seção Pilares */
+    .pillars-section {
+      background: var(--sand);
+      border-bottom: 1px solid var(--border);
+    }
+
   </style>
 </head>
 
@@ -806,24 +853,12 @@
         <p class="hero-sub">
           A MaxSyn aplica o <strong style="color:var(--gold-lt);font-weight:500;">OMB+I</strong> — Otimização para Mecanismos de Buscas com Inteligência Artificial — para hotéis independentes e pousadas boutique aparecerem no Google, integrarem seus canais e converterem hóspedes automaticamente.
         </p>
-        <h2 aria-label="Os pilares do OMB+I"  style="color:var(--gold-lt);font-weight:500;">Os pilares do OMB+I</h2>
-        <div class="pillars" aria-label="Os três pilares do OMB+I">
-        <div class="pillar">
-          <span class="pillar-badge">Pilar 01 · OMB</span>
-          <h3>Visibilidade</h3>
-          <p>Seu hotel aparece no Google orgânico, no Google Maps e no Google Business Profile — antes das OTAs e da concorrência, para quem busca acomodação no seu destino.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-badge">Pilar 02 · Integração</span>
-          <h3>Integração de canais</h3>
-          <p>Site, Google e atendimento conectados. Nenhum lead se perde no caminho. Quem chega pelo buscador encontra um fluxo direto até a reserva, sem fricção.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-badge">Pilar 03 · +I (IA)</span>
-          <h3>Inteligência Artificial</h3>
-          <p>Atendimento automatizado via WhatsApp Business com IA: resposta imediata, qualificação do hóspede e aceleração do fechamento — independente de horário ou equipe disponível.</p>
-        </div>
-      </div>
+        <p class="hero-pillars-mention" aria-label="Os três pilares do OMB+I">
+          Três pilares:
+          <span>📍 Visibilidade</span>
+          <span>🔗 Integração</span>
+          <span>🤖 Inteligência Artificial</span>
+        </p>
 
         <div class="hero-cta-group">
           <a href="#contato" class="btn-primary">Quero mais reservas diretas</a>
@@ -851,6 +886,30 @@
             <span class="stat-num">100%</span>
             <span class="stat-label">foco em hotéis independentes. Não somos generalistas.</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILARES OMB+I -->
+    <section class="section pillars-section" id="pilares" aria-labelledby="pilares-titulo">
+      <p class="section-label">Os pilares do método</p>
+      <h2 class="section-title" id="pilares-titulo">Como o OMB+I funciona na prática</h2>
+      <p class="section-body">Três frentes integradas que trabalham juntas para gerar visibilidade, capturar o hóspede e fechar a reserva — sem depender de OTA.</p>
+      <div class="pillars" aria-label="Os três pilares do OMB+I">
+        <div class="pillar pillar-light">
+          <span class="pillar-badge">Pilar 01 · OMB</span>
+          <h3>Visibilidade</h3>
+          <p>Seu hotel aparece no Google orgânico, no Google Maps e no Google Business Profile — antes das OTAs e da concorrência, para quem busca acomodação no seu destino.</p>
+        </div>
+        <div class="pillar pillar-light">
+          <span class="pillar-badge">Pilar 02 · Integração</span>
+          <h3>Integração de canais</h3>
+          <p>Site, Google e atendimento conectados. Nenhum lead se perde no caminho. Quem chega pelo buscador encontra um fluxo direto até a reserva, sem fricção.</p>
+        </div>
+        <div class="pillar pillar-light">
+          <span class="pillar-badge">Pilar 03 · +I (IA)</span>
+          <h3>Inteligência Artificial</h3>
+          <p>Atendimento automatizado via WhatsApp Business com IA: resposta imediata, qualificação do hóspede e aceleração do fechamento — independente de horário ou equipe disponível.</p>
         </div>
       </div>
     </section>
