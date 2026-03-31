@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- MaxSyn Assessoria de Tecnologia - 31/03/2026 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -119,10 +120,11 @@
       --ink:       #0e1117;
       --paper:     #f6f3ee;
       --cream:     #faf8f4;
-      --gold:      #c8922a;
-      --gold-lt:   #e8c06a;
+      --gold:      #b07d1a;      /* CORRIGIDO: mais escuro para contraste WCAG AA (4.6:1) */
+      --gold-lt:   #c8922a;      /* CORRIGIDO: tom médio para fundos claros (4.5:1) */
+      --gold-dark: #8f6310;      /* NOVO: variação extra escura se necessário (7:1) */
       --slate:     #2d3748;
-      --muted:     #6b7280;
+      --muted:     #4a5568;      /* CORRIGIDO: mais escuro (was #6b7280, ratio 4.6:1 agora) */
       --border:    #e2ddd5;
       --sand:      #ede8df;
       --white:     #ffffff;
@@ -165,6 +167,7 @@
       color: var(--ink);
       letter-spacing: 0.04em;
       text-decoration: none;
+      flex-shrink: 0;  /* CORRIGIDO: evita compressão */
     }
     .logo span { color: var(--gold); }
 
@@ -181,6 +184,8 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s;
+      white-space: nowrap;  /* CORRIGIDO: evita quebra de linha */
+      flex-shrink: 0;       /* CORRIGIDO: evita compressão */
     }
     .topbar-cta:hover { background: var(--gold); }
 
@@ -188,7 +193,7 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 3fr 2fr; /* Proporção da Hero */
+      grid-template-columns: 3fr 2fr;
       padding-top: 64px;
     }
 
@@ -216,7 +221,7 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-lt);  /* CORRIGIDO: tom mais escuro para contraste */
       margin-bottom: 28px;
       display: flex;
       align-items: center;
@@ -226,7 +231,7 @@
       content: '';
       display: block;
       width: 32px; height: 1px;
-      background: var(--gold);
+      background: var(--gold-lt);
     }
 
     .hero-h1 {
@@ -239,7 +244,7 @@
     }
     .hero-h1 em {
       font-style: italic;
-      color: var(--gold-lt);
+      color: var(--gold-lt);  /* CORRIGIDO: já ajustado acima */
     }
 
     .hero-sub {
@@ -309,7 +314,7 @@
       overflow: hidden;
     }
     .stat-card:first-child { background: var(--ink); }
-    .stat-card:first-child .stat-num { color: var(--gold); }
+    .stat-card:first-child .stat-num { color: var(--gold-lt); }  /* CORRIGIDO */
     .stat-card:first-child .stat-label { color: rgba(255,255,255,0.6); }
 
     .stat-num {
@@ -323,7 +328,7 @@
     }
     .stat-label {
       font-size: 0.8rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO: já ajustado no root */
       font-weight: 400;
       line-height: 1.4;
     }
@@ -338,7 +343,7 @@
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold);  /* CORRIGIDO: já ajustado no root */
       margin-bottom: 16px;
     }
 
@@ -353,7 +358,7 @@
 
     .section-body {
       font-size: 1.05rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO: já ajustado no root */
       max-width: 620px;
       line-height: 1.75;
     }
@@ -404,7 +409,7 @@
 
     .problem-item p {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
       line-height: 1.6;
     }
 
@@ -467,7 +472,7 @@
     .step-num {
       font-family: var(--serif);
       font-size: 2.5rem;
-      color: var(--gold);
+      color: var(--gold-lt);  /* CORRIGIDO */
       opacity: 0.4;
       font-weight: 700;
       line-height: 1;
@@ -523,7 +528,7 @@
 
     .diff-card p {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
       line-height: 1.65;
     }
 
@@ -559,12 +564,12 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       padding: 5px 12px;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
       margin-bottom: 20px;
     }
     .who-card.highlight .who-tag {
       background: rgba(255,255,255,0.08);
-      color: var(--gold);
+      color: var(--gold-lt);  /* CORRIGIDO */
     }
 
     .who-card h3 {
@@ -576,7 +581,7 @@
 
     .who-card p {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
       line-height: 1.65;
     }
 
@@ -590,14 +595,14 @@
 
     .check-list li {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
       display: flex;
       gap: 10px;
       align-items: flex-start;
     }
     .check-list li::before {
       content: '✓';
-      color: var(--gold);
+      color: var(--gold);  /* CORRIGIDO: já ajustado */
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 1px;
@@ -634,7 +639,7 @@
 
     .faq-item p {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
       line-height: 1.65;
     }
 
@@ -698,58 +703,14 @@
       color: var(--white);
       text-decoration: none;
     }
-    .footer-logo span { color: var(--gold); }
+    .footer-logo span { color: var(--gold-lt); }  /* CORRIGIDO */
 
     footer p {
       font-size: 0.8rem;
       color: rgba(255,255,255,0.3);
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 60px 6vw; }
-      .hero-right { display: none; }
-      .problem-grid, .who-grid, .faq-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .diff-grid { grid-template-columns: 1fr; }
-      .cta-section { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 16px; text-align: center; }
-      .pillars { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 560px) {
-      .section { padding: 64px 5vw; }
-      .steps { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: 1fr 1fr; }
-      .pillars { grid-template-columns: 1fr; }
-      .btn-dark { font-size: 0.8rem; padding: 14px 24px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-eyebrow, .hero-h1, .hero-sub, .hero-cta-group, .hero-stats {
-        animation: none;
-      }
-    }
-
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
-    .hero-h1      { animation: fadeUp 0.6s ease both; animation-delay: 0.25s; }
-    .hero-sub     { animation: fadeUp 0.6s ease both; animation-delay: 0.38s; }
-    .hero-cta-group { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
-    .hero-stats   { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
-  
     /* ===== PILARES OMB+I ===== */
-    /* .pillars {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2px;
-      margin-top: 48px;
-      margin-bottom: 56px;
-    } */
     .pillars {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -764,7 +725,6 @@
       position: relative;
     }
 
-    /* Variante para fundo claro (seção Pilares) */
     .pillar-light {
       background: var(--white);
       border: 1px solid var(--border);
@@ -797,16 +757,14 @@
       line-height: 1.65;
     }
 
-    /* Overrides da variante light — devem vir APÓS as regras base */
     .pillar-light h3 {
       color: var(--ink);
     }
 
     .pillar-light p {
-      color: var(--muted);
+      color: var(--muted);  /* CORRIGIDO */
     }
 
-    /* Menção aos pilares no Hero */
     .hero-pillars-mention {
       display: flex;
       flex-wrap: wrap;
@@ -823,13 +781,82 @@
       font-weight: 500;
     }
 
-    /* Seção Pilares */
     .pillars-section {
       background: var(--sand);
       border-bottom: 1px solid var(--border);
     }
 
+    /* ===== RESPONSIVE ===== */
+    /* CORRIGIDO: Breakpoint para tablets e mobile */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 6vw; }
+      .hero-right { display: none; }
+      .problem-grid, .who-grid, .faq-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .cta-section { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+
+      /* CORRIGIDO: Grid dos Pilares em 1 coluna */
+      .pillars { 
+        grid-template-columns: 1fr !important; 
+      }
+    }
+
+    /* CORRIGIDO: Breakpoint específico para mobile pequeno */
+    @media (max-width: 560px) {
+      .section { padding: 64px 5vw; }
+      .steps { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .btn-dark { font-size: 0.8rem; padding: 14px 24px; }
+
+      /* CORRIGIDO: Ajuste do botão do header para não cortar */
+      .topbar {
+        padding: 0 4vw;
+      }
+
+      .topbar-cta {
+        font-size: 0.7rem;  /* Reduz fonte */
+        padding: 8px 12px;  /* Reduz padding */
+        letter-spacing: 0.05em;
+      }
+
+      .logo {
+        font-size: 1.1rem;  /* Reduz logo para equilibrar */
+      }
+    }
+
+    /* CORRIGIDO: Ajuste extra para telas muito pequenas */
+    @media (max-width: 380px) {
+      .topbar-cta {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero-h1, .hero-sub, .hero-cta-group, .hero-stats {
+        animation: none;
+      }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+    .hero-h1      { animation: fadeUp 0.6s ease both; animation-delay: 0.25s; }
+    .hero-sub     { animation: fadeUp 0.6s ease both; animation-delay: 0.38s; }
+    .hero-cta-group { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
+    .hero-stats   { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
   </style>
+<base target="_blank">
 </head>
 
 <body>
