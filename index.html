@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- MaxSyn Assessoria de Tecnologia - 31/03/2026 -->
+<!-- MaxSyn Assessoria de Tecnologia - 01/04/2026 -->
 
 <html lang="pt-BR">
 <head>
@@ -856,6 +856,86 @@
     .hero-sub     { animation: fadeUp 0.6s ease both; animation-delay: 0.38s; }
     .hero-cta-group { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
     .hero-stats   { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
+
+    /* ===== RESERVAS DIRETAS / DEPENDÊNCIA OTA ===== */
+    .ota-dep {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .ota-dep .section-title {
+      color: var(--white);
+    }
+
+    .ota-dep .section-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .ota-dep-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .ota-dep-body {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.75;
+      margin-top: 20px;
+      max-width: 380px;
+    }
+
+    .ota-dep-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ota-pain-card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.04);
+      padding: 28px 28px;
+      border-left: 2px solid transparent;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .ota-pain-card:hover {
+      border-left-color: var(--gold);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .ota-pain-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .ota-pain-card h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .ota-pain-card p {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .ota-dep-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .ota-dep-body { max-width: 100%; }
+    }
+
   </style>
 <base target="_blank">
 </head>
@@ -1000,6 +1080,53 @@
             <div class="cost-line">
               <span>Com 70% de reservas diretas (via SEO)</span>
               <span class="good">+ R$ 6.720 / mês</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS DIRETAS / DEPENDÊNCIA OTA -->
+    <section class="section ota-dep" id="reservas-diretas" aria-labelledby="ota-dep-titulo">
+      <div class="ota-dep-grid">
+        <div class="ota-dep-left">
+          <p class="section-label" style="color:var(--gold);">O que está em jogo</p>
+          <h2 class="section-title" id="ota-dep-titulo">
+            A comissão é o sintoma.<br>
+            <em>A dependência é a doença.</em>
+          </h2>
+          <p class="ota-dep-body">
+            Reduzir reservas diretas não é apenas sobre poupar 20% de comissão. É sobre recuperar o controle do seu negócio — a relação com o hóspede, a identidade da sua marca e a previsibilidade da sua receita.
+          </p>
+          <a href="#contato" class="btn-primary" style="margin-top:36px; display:inline-block;">Quero recuperar esse controle</a>
+        </div>
+        <div class="ota-dep-right">
+          <div class="ota-pain-card">
+            <div class="ota-pain-icon" aria-hidden="true">🔒</div>
+            <div>
+              <h3>Você não conhece seu hóspede</h3>
+              <p>A OTA detém os dados. Você recebe a reserva — sem e-mail, sem histórico, sem contexto. Fidelizar quem você não conhece é impossível. O LTV (valor do cliente ao longo do tempo) vai embora junto com a comissão.</p>
+            </div>
+          </div>
+          <div class="ota-pain-card">
+            <div class="ota-pain-icon" aria-hidden="true">🪟</div>
+            <div>
+              <h3>Sua marca fica invisível</h3>
+              <p>O hóspede lembra que "achou no Booking" — não o nome da sua pousada. Cada reserva via OTA é uma oportunidade perdida de construir reconhecimento. Brand equity zero significa que você sempre precisa adquirir o cliente do zero.</p>
+            </div>
+          </div>
+          <div class="ota-pain-card">
+            <div class="ota-pain-icon" aria-hidden="true">📉</div>
+            <div>
+              <h3>Algoritmo te força a baixar o preço</h3>
+              <p>As OTAs priorizam o menor preço nas listagens. Resultado: você compete contra si mesmo em uma corrida ao fundo que corrói margem e posiciona sua propriedade como commodity — não como experiência.</p>
+            </div>
+          </div>
+          <div class="ota-pain-card">
+            <div class="ota-pain-icon" aria-hidden="true">🕳️</div>
+            <div>
+              <h3>Você não vê quem quase reservou</h3>
+              <p>Visitantes que chegaram ao seu site, viram disponibilidade e saíram sem reservar — você não sabe quem são. Sem dados próprios, sem remarketing, sem segunda chance. A OTA, porém, sabe. E mostra seu concorrente para eles.</p>
             </div>
           </div>
         </div>
@@ -1162,6 +1289,9 @@
       </a>
     </section>
   </main>
+
+
+
 
   <!-- FOOTER -->
   <footer>
